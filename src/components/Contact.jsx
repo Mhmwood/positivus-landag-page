@@ -13,7 +13,7 @@ const Contact = () => {
                     className="flex flex-col md:flex-row gap-4 mb-8"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ amount: 0.1 }}
+                    viewport={{ amount: 0.1 ,once:true}}
                     variants={variants("bottom", 0.2)}
                 >
                     <div className="flex-shrink-0 bg-primary text-black text-center py-2 px-10 rounded-md">
@@ -33,7 +33,7 @@ const Contact = () => {
                     <motion.div className="w-full md:w-1/2 p-4"
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ amount: 0.1 }}
+                        viewport={{ amount: 0.1 ,once:true}}
                         variants={variants("right", 0.3)}
                     >
                         <form className="space-y-4">
@@ -82,7 +82,7 @@ const Contact = () => {
                     className="relative md:flex justify-end items-center md:w-1/3 md:-m-8 overflow-hidden"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ amount: 0.1 }}
+                    viewport={{ amount: 0.1 ,once:true}}
                     variants={variants("right", 0.2)}
                     >
                         <img src={contactImg} alt="Contact" 

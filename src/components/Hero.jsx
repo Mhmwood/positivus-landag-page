@@ -17,7 +17,7 @@ const Hero = () => {
                 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-9"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ amount: 0.1 }}
+                viewport={{ amount: 0.1 ,once:true}}
                 variants={variants("bottom", 0.2)}
               >
                 Navigating the digital landscape for success
@@ -26,7 +26,7 @@ const Hero = () => {
                 className="text-gray-600 leading-snug text-sm lg:text-base"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ amount: 0.1 }}
+                viewport={{ amount: 0.1 ,once:true}}
                 variants={variants("bottom", 0.5)}
               >
                 Our digital marketing agency helps businesses grow and succeed
@@ -39,7 +39,7 @@ const Hero = () => {
               className="inline-block px-6 py-3 bg-black text-white font-semibold rounded-md hover:bg-gray-800"
               initial="hidden"
               whileInView="visible"
-              viewport={{ amount: 0.1 }}
+              viewport={{ amount: 0.1 ,once:true}}
               variants={variants("bottom", 0.7)}
             >
               Book a consultation
@@ -54,15 +54,16 @@ const Hero = () => {
               className="w-full h-auto rounded-md"
               initial="hidden"
               whileInView="visible"
-              viewport={{ amount: 0.1 }}
+              viewport={{ amount: 0.1 ,once:true}}
               variants={variants("bottom", 0.2)}
             />
           </div>
         </div>
 
         {/* Brand Logos Carousel */}
-        <LogoCarousel />
+           <LogoCarousel />
       </div>
+   
     </section>
   );
 };

@@ -15,7 +15,7 @@ const Footer = () => {
                 className="flex flex-col flex-wrap md:flex-row md:items-center md:justify-between gap-6 px-4 sm:px-6 lg:px-8 py-12"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ amount: 0.1 }}
+                viewport={{ amount: 0.1 ,once:true}}
                 variants={variants("bottom", 0.2)}
                 >
                     

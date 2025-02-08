@@ -12,7 +12,7 @@ const CaseStudies = () => {
                 <motion.div className="flex flex-col md:flex-row gap-4 mb-12"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ amount: 0.1 }}
+                viewport={{ amount: 0.1 ,once:true}}
                 variants={variants("bottom", 0.2)}
                 >
                     <div className="flex-shrink-0 bg-primary text-black text-center py-2 px-12 rounded-md">
@@ -29,7 +29,7 @@ const CaseStudies = () => {
                 <motion.div className="bg-black text-white p-8 rounded-md"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ amount: 0.1 }}
+                viewport={{ amount: 0.1 ,once:true}}
                 variants={variants("bottom", 0.3)}
                 >
                     <div 

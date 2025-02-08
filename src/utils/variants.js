@@ -15,6 +15,7 @@ const variants = (direction, delay) => {
           duration: 1.2,
           delay: delay,
           ease: [0.25, 0.25, 0.25, 0.75],
+        
         },
       },
     };

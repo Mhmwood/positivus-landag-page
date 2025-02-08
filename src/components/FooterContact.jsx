@@ -9,7 +9,7 @@ const FooterContact = () => {
             className="flex flex-col py-8 px-4 sm:px-6 lg:px-8 md:flex-row gap-8"
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.1 }}
+            viewport={{ amount: 0.1 ,once:true}}
             variants={variants("bottom", 0.3)}
             >
 

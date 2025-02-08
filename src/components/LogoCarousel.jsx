@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 import Logo1 from "../assets/logos/amazon.png";
 import Logo2 from "../assets/logos/dribble.png";
@@ -8,28 +7,45 @@ import Logo3 from "../assets/logos/hubspot.png";
 import Logo4 from "../assets/logos/notion.png";
 import Logo5 from "../assets/logos/netflix.png";
 import Logo6 from "../assets/logos/zoom.png";
-import variants from '../utils/variants';
+
 
 const LogoCarousel = () => {
-    return (
-        <div
+  const data = [Logo1, Logo2, Logo3, Logo4, Logo5, Logo6];
+  const controls = useAnimation();
+  const duplicatedData = [...data, ...data];
+  
+  useEffect(() => {
+  
+    controls.start({
+      x: ["0%", "-100%"],
+      transition: {
+        duration: 20,
+        repeat: Infinity,
+        ease: "linear",
+      },
+    });
+  }, [controls]);
 
-            className=" pt-24 overflow-hidden">
-            <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ amount: 0.1 }}
-                variants={variants("right", 0.3)}
-                className="flex space-x-24 justify-between items-center animate-marquee ">
-                <img src={Logo1} alt="Brand 1" className="h-12  grayscale hover:grayscale-0" />
-                <img src={Logo2} alt="Brand 2" className="h-12  grayscale hover:grayscale-0" />
-                <img src={Logo3} alt="Brand 3" className="h-12  grayscale hover:grayscale-0" />
-                <img src={Logo4} alt="Brand 4" className="h-12  grayscale hover:grayscale-0" />
-                <img src={Logo5} alt="Brand 5" className="h-12  grayscale hover:grayscale-0" />
-                <img src={Logo6} alt="Brand 6" className="h-12  grayscale hover:grayscale-0" />
-            </motion.div>
-        </div>
-    );
+  return (
+    <div className=" pt-24 overflow-hidden">
+      <motion.div
+        className="flex gap-24 justify-between items-center "
+        animate={controls}
+      >
+        {duplicatedData.map((item, index) => (
+      
+            <img
+              src={item}
+              key={index}
+             
+              alt={"Brand " + index}
+              className="h-12 grayscale hover:grayscale-0"
+            />
+      
+        ))}
+      </motion.div>
+    </div>
+  );
 };
 
 export default LogoCarousel;
